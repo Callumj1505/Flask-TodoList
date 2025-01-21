@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    background-color:#212121;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title{
+    text-align: center;
+    color: aqua;
+    font-weight: 900;
+    font-size: 80px;
+    margin-bottom: -0px;
+}
+
+
+.flex{
+    position: relative;
+    color: white;
+    margin-top: 5px;
+    justify-content: center;
+    flex:1;
+    font-weight: 600;
+    word-wrap: break-word; /* Ensure long words break and wrap */
+
+
+}
+
+.buttons{
+    background-color: aqua;
+    padding: 10px 10px;
+    margin-left:10px;
+    border-radius: 40px
+}
+
+.form1{
+    border: aqua solid 4px;
+    border-radius: 20px;
+    margin: 20px;
+    padding:20px;
+    display: flex;
+    flex: row;
+    word-wrap: break-word; /* Ensure long words break and wrap */
+    overflow-wrap: break-word; /* Ensure long words break and wrap */
+    white-space: normal; /* Allow text to wrap */
+}
+    
+.outside-box{
+    display: flex;
+    flex-direction: column;
+    background-color: #212121;
+    border: aqua solid 5px;
+    border-radius: 30px;
+    height: 100vh;
+    width: 40%;
+}
+
+input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+button{
+    background-color: aqua;
+    height: 44px;
+    border-radius: 10px;
+    position: relative;
+    top: 5px;
+    margin-left: -17px;
+}
+
+input:focus{
+    outline: none;
+    border: aqua 2px solid;
+}
+
+button:focus{
+    outline: none;
+    border:#212121 2px solid;
+}
+button:hover{
+    background-color: aquamarine;
+}
+.svg{  
+    fill: black;
+    position: relative;
+    top: 5px;
+}
+
+.buttons:hover{
+    background-color: aquamarine;
+    border: white solid 2px;
+}
+
+.p:hover{
+    fill:white;
+}
+
+.date{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+
+}
+
+.cde{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -35px;
+}
+
+.p1{
+    color: white;
+    font-weight: 600;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-size: 13px;
+    text-decoration: underline;
+
+}
+
+.completed-task{
+    text-decoration: line-through;
+    color: gray;
+    opacity: 1;
+}
