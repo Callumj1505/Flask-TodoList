@@ -1,5 +1,5 @@
 from website import create_app, db
-from website.models import Todo
+from website.models import Todo, Auth
 
 app = create_app()
 

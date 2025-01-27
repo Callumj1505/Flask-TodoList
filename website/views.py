@@ -41,7 +41,8 @@ def delete(todo_id):
     db.session.commit()
     return redirect(url_for('my_view.home'))
 
-@my_view.route("/edit/<todo_id>", methods=['GET', 'POST'])
+
+@my_view.route("/edit/<int:todo_id>", methods=['GET', 'POST'])
 def edit(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()
     if request.method == 'POST':
@@ -49,3 +50,7 @@ def edit(todo_id):
         db.session.commit()
         return redirect(url_for('my_view.home'))
     return render_template('edit.html', todo=todo)
+
+    
+
+    

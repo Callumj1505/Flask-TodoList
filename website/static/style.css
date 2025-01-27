@@ -4,14 +4,25 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
 body {
     background-color:#212121;
+}
+
+.everything-holder{
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+    display: flex ;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .title{
@@ -27,7 +38,6 @@ body {
     position: relative;
     color: white;
     margin-top: 5px;
-    justify-content: center;
     flex:1;
     font-weight: 600;
     word-wrap: break-word; /* Ensure long words break and wrap */
@@ -36,15 +46,17 @@ body {
 }
 
 .buttons{
+    padding: 5px 7px 5px 7px;
+    border-radius: 100px;
+    text-decoration: none;
     background-color: aqua;
-    padding: 10px 10px;
     margin-left:10px;
-    border-radius: 40px
 }
 
 .form1{
     border: aqua solid 4px;
     border-radius: 20px;
+    width: 80%;
     margin: 20px;
     padding:20px;
     display: flex;
@@ -56,12 +68,13 @@ body {
     
 .outside-box{
     display: flex;
+    align-items: center ;
     flex-direction: column;
     background-color: #212121;
     border: aqua solid 5px;
     border-radius: 30px;
     height: 100vh;
-    width: 40%;
+    width: 50%;
 }
 
 input{
@@ -94,7 +107,6 @@ button:hover{
 .svg{  
     fill: black;
     position: relative;
-    top: 5px;
 }
 
 .buttons:hover{
@@ -135,4 +147,25 @@ button:hover{
     text-decoration: line-through;
     color: gray;
     opacity: 1;
+}
+
+
+.nav1{
+    background-color: hsl(180, 100%, 50%, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.login-button{
+    text-decoration: none;
+    color: white;
+}
+li{
+    list-style-type: none;
+}
+
+.login-button:hover{
+    color: black;
+    opacity: 100%;
 }

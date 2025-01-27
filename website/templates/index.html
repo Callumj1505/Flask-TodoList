@@ -8,39 +8,63 @@
     <title>Todo App</title>
 </head>
 <body>
+    <nav class="nav1">
+        <ul>
+            <li>
+                <a class="login-button" href="{{ url_for('auth.Signup_Home') }}">Sign-Up</a>
+                <a class="login-button">Login</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="everything-holder">
         <h1 class="title">To Do List</h1>
         {% if message %}
-        <p class="p1">{{message}}</p>
+        <p class="p1">{{ message }}</p>
         {% endif %}
-        {%if message2 %}
-        <p class="p1">you have entered a task!</p>
+        {% if message2 %}
+        <p class="p1">You have entered a task!</p>
         {% endif %}
         <form class="input" action="/add" method="post">
-                <input type="text" name="task" placeholder="Enter a Task">
-                <button class="p" type="submit"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined"><path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/></svg></button>
-            </div>
+            <input type="text" name="task" placeholder="Enter a Task">
+            <button class="p" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
+                    <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+                </svg>
+            </button>
         </form>
-    </div>
-    <div class="outside-box">
-        {% for todo in todo_list %}
-        <div class="form1">
-            <p class="flex {% if todo.complete %}completed-task{% endif %}">{{ todo.id }} . {{ todo.task }}</p>
-            <p class="date">{{ todo.date_created.strftime('%d-%m-%y') }}</p>
-            <div class="button-container">
-                {% if not todo.complete %}
-                    <a class="buttons" href="/update/{{ todo.id }}"> <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
-                        <path class="p" d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></a>
-                {% else %}
-                    <a class="buttons" href="/update/{{ todo.id }}"><svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
-                        <path class="p" d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
-                {% endif %}
-                <a class="buttons" href="/delete/{{ todo.id }}"><svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
-                    <path class="p" d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg></a>
-                <a class="buttons" href="/edit/{{ todo.id }}"><svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
-                    <path class="p" d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg></a>
+        <div class="outside-box">
+            {% for todo in todo_list %}
+            <div class="form1">
+                <p class="flex {% if todo.complete %}completed-task{% endif %}">{{ todo.id }} . {{ todo.task }}</p>
+                <p class="date">{{ todo.date_created.strftime('%d-%m-%y') }}</p>
+                <div class="button-container">
+                    {% if not todo.complete %}
+                    <a class="buttons" href="/update/{{ todo.id }}">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
+                            <path class="p" d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
+                        </svg>
+                    </a>
+                    {% else %}
+                    <a class="buttons" href="/update/{{ todo.id }}">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
+                            <path class="p" d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </a>
+                    {% endif %}
+                    <a class="buttons" href="/delete/{{ todo.id }}">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
+                            <path class="p" d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                        </svg>
+                    </a>
+                    <a class="buttons" href="/edit/{{ todo.id }}">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="undefined">
+                            <path class="p" d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 </body>
 </html>
