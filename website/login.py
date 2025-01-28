@@ -4,8 +4,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from .models import Auth
 from . import db
 
-auth = Blueprint("auth", __name__)
 
+auth = Blueprint("auth", __name__)
 
 
 @auth.route('/Sign-Up', methods=['POST', 'GET'])
@@ -21,11 +21,6 @@ def Signup_Home():
         
         if len(email) < 5 or "@" not in email:
             flash('Email Must be Longer than 5 Charcters. Or email doesnt contain "@"', 'error')
-            return render_template('signup.html')
-        
-        
-        if not email or not password or not password2:
-            flash('Required input to continue.', 'error')
             return render_template('signup.html')
         
         if password2 != password:
@@ -44,18 +39,39 @@ def Signup_Home():
         db.session.commit()
         
         flash('Account has been created successfully. Please login.', 'success')
-        return redirect(url_for('auth.Signup_Home'))
+        return redirect(url_for('auth.login_Home'))
     
     return render_template('signup.html')
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @auth.route('/Login', methods = ['GET', 'POST'] )
 def login_Home():
     if request.method == 'POST':
         email = request.form.get("emaillogin")
         password = request.form.get("passwordlogin")
-        
         
         user = Auth.query.filter_by(email=email).first()
         if user and check_password_hash(user.password, password):

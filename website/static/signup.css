@@ -52,7 +52,7 @@ button{
 h1{
     color: white;
     font-size: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-weight:900;
     color: white;
 }
@@ -69,6 +69,7 @@ input:focus{
 .flash {
     display: flex;
     color: white;
+    margin-bottom:20px;
     visibility: visible; /* Initially visible */
     animation: fadeOut 3s forwards; /* Apply fade-out animation */
 
@@ -94,6 +95,7 @@ input:focus{
     color: rgb(196, 255, 108);
     background-color: hsl(120, 100%, 25%, 0.4);
     padding:10px;
+    margin-bottom:20px;
     font-weight: bold;
 }
 
@@ -101,7 +103,9 @@ input:focus{
     background-color:hsl(0, 100%, 27%, 0.4);
     color: rgb(255, 103, 103);
     padding:10px;
+    margin-bottom:20px;
     font-weight: bold;
+
 }
 
 label{

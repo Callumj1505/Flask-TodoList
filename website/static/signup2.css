@@ -20,7 +20,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: aqua;
-    height: 60%;
+    height: 50%;
     border-radius: 40px;
     width: 40%;
     border: white solid 3px;
@@ -53,7 +53,7 @@ button{
 h1{
     color: white;
     font-size: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-weight:900;
     color: white;
 }
@@ -71,6 +71,7 @@ input:focus{
     color: white;
     visibility: visible; /* Initially visible */
     animation: fadeOut 3s forwards; /* Apply fade-out animation */
+    margin-bottom:40px;
 
 }
 
@@ -94,6 +95,7 @@ input:focus{
     color: rgb(196, 255, 108);
     background-color: hsl(120, 100%, 25%, 0.4);
     padding:10px;
+    margin-bottom:30px;
     font-weight: bold;
 }
 
@@ -101,6 +103,7 @@ input:focus{
     background-color:hsl(0, 100%, 27%, 0.4);
     color: rgb(255, 103, 103);
     padding:10px;
+    margin-bottom:30px;
     font-weight: bold;
 }
 

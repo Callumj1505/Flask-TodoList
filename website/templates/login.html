@@ -18,6 +18,7 @@
         </ul>
     </nav>
     <div class="everything-container">
+        <h1>Login</h1>
         {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
                 <div id="flash-messages">
@@ -27,7 +28,7 @@
                 </div>
             {% endif %}
         {% endwith %}
-        <h1>Login</h1>
+        
         <div class="main-container">
             <form action="{{ url_for('auth.login_Home') }}" method="post">
                 <div class="input-boxes">
