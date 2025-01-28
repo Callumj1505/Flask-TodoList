@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
-    <title>Sing-up Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup2.css') }}">
+    <title>Sign-up Page</title>
 </head>
 <body>
-    {% with messages = get_flashed_messages(with_categories=True) %}
+    <nav class="nav1">
+        <ul>
+            <li>
+                <a class="login-button" href="{{ url_for('auth.Signup_Home') }}">Sign-Up</a>
+                <a class="login-button" href="{{ url_for('auth.login_Home') }}">Login</a>
+                <a class="login-button" href="{{ url_for('my_view.home') }}">Home</a>
+                <a class="login-button" href="{{ url_for('auth.Logout') }}">Log Out</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="everything-container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
             {% if messages %}
                 <div id="flash-messages">
                     {% for category, message in messages %}
@@ -16,20 +27,20 @@
                 </div>
             {% endif %}
         {% endwith %}
+        <h1>Sign-Up</h1>
+        <div class="main-container">
+            <form action="{{ url_for('auth.Signup_Home') }}" method="post">
+                <div class="input-boxes">
+                    <label for="email">Email:</label>
+                    <input id="email" type="text" placeholder="Enter Email..." name="email" required>
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" placeholder="Enter Password..." name="password" required>
+                    <label for="password2">Password Again:</label>
+                    <input id="password2" type="password" placeholder="Enter Password Again..." name="password2" required>
+                    <button type="submit">Sign-Up</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <h1>Sign-Up</h1>
-    <div class="main-container">
-    <form action="{{ url_for('auth.Signup_Home') }}" method="post">
-        <div class="input-boxes">
-            <label for="email"> Email:</label>
-        <input id="email" type="text" placeholder="Enter Email..." name="email">
-        <label for="password"> password:</label>
-        <input id='password'type="text" placeholder="Enter Password..." name="password">
-        <label for="password2"> Password:</label>
-        <input id="password2" type="text" placeholder="Enter Password Again..." name="password2">
-        <button type="submit">Sign-Up</button>
-    </div>
-    </form>
-</div>
 </body>
 </html>

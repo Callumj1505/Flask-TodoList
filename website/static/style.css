@@ -153,16 +153,19 @@ button:hover{
 .nav1{
     background-color: hsl(180, 100%, 50%, 0.5);
     display: flex;
+    width: 97.5%;
     justify-content: flex-end;
     padding: 15px;
 }
 
 .login-button{
     text-decoration: none;
+    margin-left: 10px;
     color: white;
 }
 li{
     list-style-type: none;
+    width: 100%;
 }
 
 .login-button:hover{

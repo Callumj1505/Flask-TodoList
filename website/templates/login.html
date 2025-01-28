@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+    <title>Login Page</title>
 </head>
 <body>
-    <form>
-        <input
-    </form>
+    <nav class="nav1">
+        <ul>
+            <li>
+                <a class="login-button" href="{{ url_for('auth.Signup_Home') }}">Sign-Up</a>
+                <a class="login-button" href="{{ url_for('auth.login_Home') }}">Login</a>
+                <a class="login-button" href="{{ url_for('my_view.home') }}">Home</a>
+                <a class="login-button" href="{{ url_for('auth.Logout') }}">Log Out</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="everything-container">
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div id="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <h1>Login</h1>
+        <div class="main-container">
+            <form action="{{ url_for('auth.login_Home') }}" method="post">
+                <div class="input-boxes">
+                    <label for="email">Email:</label>
+                    <input id="email" type="text" placeholder="Enter Email..." name="emaillogin" required>
+                    <label for="password">Password:</label>
+                    <input id="password" type="password" placeholder="Enter Password..." name="passwordlogin" required>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

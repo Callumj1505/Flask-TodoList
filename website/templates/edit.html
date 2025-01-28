@@ -7,6 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <nav class="nav1">
+        <ul>
+            <li>
+                <a class="login-button" href="{{ url_for('auth.Signup_Home') }}">Sign-Up</a>
+                <a class="login-button" href="{{ url_for('auth.login_Home') }}">Login</a>
+                <a class="login-button" href="{{ url_for('my_view.home') }}">Home</a>
+                <a class="login-button" href="{{ url_for('auth.Logout') }}">Log Out</a>
+            </li>
+        </ul>
+    </nav>
     <h1 class="h1">Edit To-Do</h1>
     <div class="div1">
     <form action="/edit/{{ todo.id }}" method="post">

@@ -95,3 +95,32 @@ form{
     color: white;
     text-decoration: none;
 }
+
+
+
+.nav1{
+    background-color: hsl(180, 100%, 50%, 0.5);
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.login-button{
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    margin-right: 10px;
+    color: white;
+}
+li{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.login-button:hover{
+    color: black;
+    opacity: 100%;
+}
