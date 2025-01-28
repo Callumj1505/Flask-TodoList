@@ -77,7 +77,7 @@ def login_Home():
         if user and check_password_hash(user.password, password):
             session['user_id'] = user.id
             flash('Logged in successfully!', 'success')
-            return redirect(url_for('my_view.home'))
+            return redirect(url_for('auth.login_Home'))
         else:
             flash('Invalid email or password', 'error')
     return render_template('login.html')
